@@ -5,10 +5,6 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const buttons = [
   {
-    path: "images/logo.svg",
-    style: "mr-2 max-second:mr-auto",
-  },
-  {
     title: "Collections",
   },
   {
@@ -70,7 +66,7 @@ export default function Header({ changeAmount }) {
     });
   };
 
-  const closeCart = (e) => {
+  const cart = (e) => {
     e.stopPropagation(); // Prevent click from closing immediately
     setCartDisplayed((prev) => !prev);
   };
@@ -136,6 +132,10 @@ export default function Header({ changeAmount }) {
           <img className="hidden max-second:block" src="images/icon-menu.svg" />
         </button>
 
+        <li className="mr-2 max-second:mr-auto">
+          <img src="images/logo.svg" />
+        </li>
+
         {buttons.map(({ title, path, style }) =>
           path ? (
             <li
@@ -144,8 +144,8 @@ export default function Header({ changeAmount }) {
               ref={path === "images/icon-cart.svg" ? cartRef : null}
             >
               <button
-                onClick={path === "images/icon-cart.svg" ? closeCart : null}
-                className={style}
+                className="h-full w-full"
+                onClick={path === "images/icon-cart.svg" ? cart : null}
               >
                 <img
                   src={path}
@@ -185,7 +185,7 @@ export default function Header({ changeAmount }) {
               <a
                 href="https://demo-store-tan-one.vercel.app/"
                 target="_blank"
-                className="tracking-wider text-darkGrayishBlue transition-colors duration-1000 hover:text-veryDarkBlue"
+                className="h-full w-full tracking-wider text-darkGrayishBlue transition-colors duration-1000 hover:text-veryDarkBlue"
               >
                 {title}
               </a>
@@ -203,7 +203,7 @@ export default function Header({ changeAmount }) {
                     "top-left",
                   )
                 }
-                className="tracking-wider text-darkGrayishBlue transition-colors duration-1000 hover:text-veryDarkBlue"
+                className="h-full w-full tracking-wider text-darkGrayishBlue transition-colors duration-1000 hover:text-veryDarkBlue"
               >
                 {title}
               </button>
