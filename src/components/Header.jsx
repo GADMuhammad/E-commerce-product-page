@@ -37,6 +37,9 @@ const buttons = [
   },
 ];
 
+const indicatorStyle =
+  "absolute right-0 top-20 z-10 hidden w-full -translate-y-2 rounded-lg border-2 border-solid border-orange group-hover:block";
+
 export default function Header({ changeAmount }) {
   const [cartDisplayed, setCartDisplayed] = useState(false);
   const [burgerMenu, setBurgerMenu] = useState(false);
@@ -129,7 +132,7 @@ export default function Header({ changeAmount }) {
       </AnimatePresence>
 
       <ul className="flex flex-wrap items-center gap-10">
-        <button className="" onClick={() => setBurgerMenu(true)}>
+        <button onClick={() => setBurgerMenu(true)}>
           <img className="hidden max-second:block" src="images/icon-menu.svg" />
         </button>
 
@@ -175,7 +178,10 @@ export default function Header({ changeAmount }) {
               </AnimatePresence>
             </li>
           ) : title.includes("Store") ? (
-            <li key={title} className={`max-second:hidden ${style}`}>
+            <li
+              key={title}
+              className={`group relative max-second:hidden ${style}`}
+            >
               <a
                 href="https://demo-store-tan-one.vercel.app/"
                 target="_blank"
@@ -183,9 +189,13 @@ export default function Header({ changeAmount }) {
               >
                 {title}
               </a>
+              <div className={indicatorStyle} />
             </li>
           ) : (
-            <li key={title} className={`max-second:hidden ${style}`}>
+            <li
+              key={title}
+              className={`group relative max-second:hidden ${style}`}
+            >
               <button
                 onClick={() =>
                   notify(
@@ -197,6 +207,7 @@ export default function Header({ changeAmount }) {
               >
                 {title}
               </button>
+              <div className={indicatorStyle} />
             </li>
           ),
         )}
