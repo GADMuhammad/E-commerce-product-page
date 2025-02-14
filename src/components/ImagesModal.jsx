@@ -28,7 +28,7 @@ export default function ImagesModal({ setModalDisplayed }) {
         className="col-span-4 mb-6 h-6 w-6 justify-self-end"
       >
         <img
-          src="/public/images/icon-close.svg"
+          src="images/icon-close.svg"
           alt="click to close images display."
           className="w-full"
         />
