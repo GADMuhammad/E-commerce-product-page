@@ -44,15 +44,13 @@ export default function Header({ changeAmount }) {
     burgerMenuRef = useRef(null);
 
   useEffect(() => {
-    if (cartDisplayed || burgerMenu) {
-      const handleClickOutside = (event) => {
-        !cartRef.current?.contains(event.target) && setCartDisplayed(false);
-        !burgerMenuRef.current?.contains(event.target) && setBurgerMenu(false);
-      };
+    const handleClickOutside = (event) => {
+      !cartRef.current?.contains(event.target) && setCartDisplayed(false);
+      !burgerMenuRef.current?.contains(event.target) && setBurgerMenu(false);
+    };
 
-      document.addEventListener("click", handleClickOutside);
-      return () => document.removeEventListener("click", handleClickOutside);
-    }
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
   }, [burgerMenu, cartDisplayed]);
 
   const notify = (message, place) => {
