@@ -39,8 +39,9 @@ const indicatorStyle =
 export default function Header({ changeAmount }) {
   const [cartDisplayed, setCartDisplayed] = useState(false);
   const [burgerMenu, setBurgerMenu] = useState(false);
-  const cartRef = useRef(null);
-  const burgerMenuRef = useRef(null);
+
+  const cartRef = useRef(null),
+    burgerMenuRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
