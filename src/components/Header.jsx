@@ -40,17 +40,19 @@ export default function Header({ changeAmount }) {
   const [cartDisplayed, setCartDisplayed] = useState(false);
   const [burgerMenu, setBurgerMenu] = useState(false);
   const cartRef = useRef(null);
+  const burgerMenuRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (cartRef.current && !cartRef.current.contains(event.target)) {
-        setCartDisplayed(false);
-      }
+      !cartRef.current?.contains(event.target) && setCartDisplayed(false);
+      burgerMenu &&
+        !burgerMenuRef.current?.contains(event.target) &&
+        setBurgerMenu(false);
     };
 
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
+  }, [burgerMenu]);
 
   const notify = (message, place) => {
     toast.warn(message, {
@@ -128,8 +130,11 @@ export default function Header({ changeAmount }) {
       </AnimatePresence>
 
       <ul className="flex flex-wrap items-center gap-10">
-        <button onClick={() => setBurgerMenu(true)}>
-          <img className="hidden max-second:block" src="images/icon-menu.svg" />
+        <button ref={burgerMenuRef} onClick={() => setBurgerMenu(true)}>
+          <img
+            className="hidden h-full w-full max-second:block"
+            src="images/icon-menu.svg"
+          />
         </button>
 
         <li className="mr-2 max-second:mr-auto">
