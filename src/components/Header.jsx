@@ -130,10 +130,7 @@ export default function Header({ changeAmount }) {
 
       <ul className="flex flex-wrap items-center gap-10">
         <button className="" onClick={() => setBurgerMenu(true)}>
-          <img
-            className="hidden max-second:block"
-            src="/public/images/icon-menu.svg"
-          />
+          <img className="hidden max-second:block" src="images/icon-menu.svg" />
         </button>
 
         {buttons.map(({ title, path, style }) =>
