@@ -34,7 +34,7 @@ const buttons = [
 ];
 
 const indicatorStyle =
-  "absolute right-0 top-20 z-10 hidden w-full -translate-y-2 rounded-lg border-2 border-solid border-orange group-hover:block";
+  "absolute right-0 top-20 z-10 border-transparent transition-colors duration-700 w-full -translate-y-2 rounded-lg border-2 border-solid  group-hover:border-orange";
 
 export default function Header({ changeAmount }) {
   const [cartDisplayed, setCartDisplayed] = useState(false);
