@@ -46,10 +46,6 @@ body:has(nav)::before {
   }
 }
 
-body:has(dialog[open]) {
-  overflow: hidden;
-}
-
 @media (max-width: 1100px) {
   body:has(dialog[open])::before {
     display: none;
