@@ -22,7 +22,7 @@ body:has(nav)::before {
   top: 0;
   left: 0;
   width: 100%;
-  height: fit-content;
+  height: 100%;
   z-index: 9;
   -webkit-animation: black-bg ease-in-out 0.25s forwards;
   animation: black-bg ease-in-out 0.4s forwards;
