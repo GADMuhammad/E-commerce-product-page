@@ -8,7 +8,7 @@ Thanks for checking out this front-end coding challenge.
 
 ## The challenge
 
-This Challenge is to build out this e-commerce product page and get it looking as close to the design as possible.
+This Challenge is to build out this e-commerce product page and get it looking as close to the design.
 
 features:
 
